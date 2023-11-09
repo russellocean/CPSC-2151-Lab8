@@ -13,7 +13,6 @@ package Lab8.Views;
  */
 public class ClassView
 {
-	//TODO implement the printClassInformation function
 	/**
 	 * This functions "updates" my GUI by printing the information to the console. It should begin with the println statement: "Class Details:"
 	 *
@@ -29,9 +28,9 @@ public class ClassView
 	public void printClassInformation(String aClassName, int aClassNumber, String aClassDPT)
 	{
 		System.out.println("Class Details:");
-		System.out.println("\tName: " + aClassName);
-		System.out.println("\tClass Number: " + aClassName);
-		System.out.println("\tClass Department: " + aClassDPT);
+		System.out.println("Name: " + aClassName);
+		System.out.println("Class Number: " + aClassNumber);
+		System.out.println("Class Department: " + aClassDPT);
 	}
 
 }
