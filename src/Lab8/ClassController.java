@@ -41,10 +41,9 @@ public class ClassController
 	 * 
 	 * @return [the name associated with MyModel's class]
 	 */
-	//TODO implement
 	public String getClassName()
 	{
-
+		return this.myModel.getClassName();
 	}
 	
 	
@@ -58,10 +57,13 @@ public class ClassController
 	 * @post myModel.ClassName = aName IFF |aName| > 0 ELSE myModel.ClassName = "NoValidNameSet" AND myView = #myView
 	 * 
 	 */
-	//TODO implement
 	public void setClassName(String aName)
 	{
-
+		if (aName != null && !aName.isEmpty()) {
+			this.myModel.setClassName(aName);
+		} else {
+			this.myModel.setClassName("NoValidNameSet");
+		}
 	}
 	
 	
@@ -74,10 +76,9 @@ public class ClassController
 	 * 
 	 * @return [the class number associated with MyModel's class]
 	 */
-	//TODO implement
 	public int getClassNumber()
 	{
-
+		return this.myModel.getClassNumber();
 	}
 	
 	
@@ -92,10 +93,13 @@ public class ClassController
 	 * ELSE myModel.ClassNumber = 0000 AND myView = #myView
 	 * 
 	 */
-	//TODO implement
 	public void setClassNumber(int aNumber)
 	{
-
+		if (aNumber > MIN_COURSE_NUM && aNumber < MAX_COURSE_NUM && Integer.toString(aNumber).length() == COURSE_NUM_LENGTH) {
+			this.myModel.setClassNumber(aNumber);
+		} else {
+			this.myModel.setClassNumber(0000);
+		}
 	}
 	
 	
@@ -108,10 +112,9 @@ public class ClassController
 	 * 
 	 * @return [the department associated with myModel's class]
 	 */
-	//TODO implement
 	public String getClassDPT()
 	{
-
+		return this.myModel.getClassDPT();
 	}
 	
 	
@@ -125,10 +128,13 @@ public class ClassController
 	 * @post myModel.ClassDPT = aClassDPT IFF |aClassDPT| = COURSE_DPT_LENGTH, ELSE myModel.ClassDPT = "XXXX" AND myView = #myView
 	 * 
 	 */
-	//TODO implement
 	public void setClassDPT(String aClassDPT)
 	{
-
+		if (aClassDPT.length() == COURSE_DPT_LENGTH) {
+			this.myModel.setClassDPT(aClassDPT);
+		} else {
+			this.myModel.setClassDPT("XXXX");
+		}
 	}
 	
 	
